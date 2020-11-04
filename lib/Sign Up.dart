@@ -1,22 +1,7 @@
-import 'package:day12_login/Animation/FadeAnimation.dart';
-import 'package:day12_login/Sign%20Up.dart';
 import 'package:flutter/material.dart';
-import 'Forget Password.dart';
-import 'Main Page/Main Page.dart';
+import 'Animation/FadeAnimation.dart';
 
-void main() => runApp(MyApp());
-
-class MyApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Login',
-      home: HomePage(),
-    );
-  }
-}
-
-class HomePage extends StatelessWidget {
+class SignUp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -73,10 +58,9 @@ class HomePage extends StatelessWidget {
                           1.5,
                           Container(
                             decoration: BoxDecoration(
-                              image: DecorationImage(
-                                image: AssetImage('assets/images/clock.png'),
-                              ),
-                            ),
+                                image: DecorationImage(
+                                    image:
+                                        AssetImage('assets/images/clock.png'))),
                           ),
                         ),
                       ),
@@ -87,7 +71,7 @@ class HomePage extends StatelessWidget {
                             margin: EdgeInsets.only(top: 50),
                             child: Center(
                               child: Text(
-                                "Login",
+                                "Sign Up",
                                 style: TextStyle(
                                     color: Colors.white,
                                     fontSize: 40,
@@ -109,18 +93,32 @@ class HomePage extends StatelessWidget {
                           Container(
                             padding: EdgeInsets.all(5),
                             decoration: BoxDecoration(
-                              color: Colors.white,
-                              borderRadius: BorderRadius.circular(10),
-                              boxShadow: [
-                                BoxShadow(
-                                  color: Color.fromRGBO(143, 148, 251, .2),
-                                  blurRadius: 20.0,
-                                  offset: Offset(0, 10),
-                                ),
-                              ],
-                            ),
+                                color: Colors.white,
+                                borderRadius: BorderRadius.circular(10),
+                                boxShadow: [
+                                  BoxShadow(
+                                    color: Color.fromRGBO(143, 148, 251, .2),
+                                    blurRadius: 30.0,
+                                    offset: Offset(0, 10),
+                                  ),
+                                ]),
                             child: Column(
                               children: <Widget>[
+                                Container(
+                                  padding: EdgeInsets.all(8.0),
+                                  child: TextField(
+                                    decoration: InputDecoration(
+                                      icon: Icon(
+                                        Icons.person,
+                                        color: Colors.black,
+                                      ),
+                                      border: InputBorder.none,
+                                      hintText: "Full Name",
+                                      hintStyle:
+                                          TextStyle(color: Colors.grey[400]),
+                                    ),
+                                  ),
+                                ),
                                 Container(
                                   padding: EdgeInsets.all(8.0),
                                   decoration: BoxDecoration(
@@ -161,74 +159,22 @@ class HomePage extends StatelessWidget {
                             ),
                           )),
                       SizedBox(
-                        height: 20,
-                      ),
-                      FittedBox(
-                        child: GestureDetector(
-                          onTap: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) {
-                                  return ForgetPassword();
-                                },
-                              ),
-                            );
-                          },
-                          child: Text(
-                            'Forget Password',
-                            style: TextStyle(
-                              color: Color.fromRGBO(143, 148, 252, 1),
-                            ),
-                          ),
-                        ),
-                      ),
-                      SizedBox(
                         height: 30,
                       ),
-                      Center(
-                        child: GestureDetector(
-                          onTap: (){Navigator.push(context, MaterialPageRoute(builder:(context)=>SignIn()),);},
-                          child: Container(
-                            height: 50,
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(10),
-                              gradient: LinearGradient(colors: [
-                                Color.fromRGBO(144, 148, 252, 1),
-                                Color.fromRGBO(143, 148, 252, 6),
-                              ]),
-                            ),
-                            child: Center(
-                              child: Text(
-                                'Login',
-                                style: TextStyle(
-                                    color: Colors.white,
-                                    fontWeight: FontWeight.bold),
-                              ),
-                            ),
-                          ),
+                      Container(
+                        height: 50,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(10),
+                          gradient: LinearGradient(colors: [
+                            Color.fromRGBO(144, 148, 252, 1),
+                            Color.fromRGBO(143, 148, 252, 6),
+                          ]),
                         ),
-                      ),
-                      SizedBox(
-                        height: 20,
-                      ),
-                      FittedBox(
-                        child: GestureDetector(
-                          onTap: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) {
-                                  return SignUp();
-                                },
-                              ),
-                            );
-                          },
+                        child: Center(
                           child: Text(
                             'Sign Up',
                             style: TextStyle(
-                                fontSize: 15,
-                                color: Color.fromRGBO(143, 148, 252, 1),
+                                color: Colors.white,
                                 fontWeight: FontWeight.bold),
                           ),
                         ),
